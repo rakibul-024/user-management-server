@@ -23,6 +23,12 @@ app.get('/users', (req, res) => {
 
 app.post('/users',(req,res)=>{
   console.log('data from client',req.body);
+  const newUser = req.body;
+  //temporary data storage
+  newUser.id = users.length + 1;
+  users.push(newUser);
+
+  
   res.send({success:true,message:'User added successfully'})
 
 });
